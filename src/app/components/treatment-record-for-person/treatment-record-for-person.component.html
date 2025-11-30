@@ -1,0 +1,32 @@
+
+<app-navbar></app-navbar>
+
+<div *ngIf="records.length === 0">
+    No treatment records available.
+  </div>
+ <div class="container">
+  <h2 class="my-4">My Treatment Records</h2>
+  <table *ngIf="records.length > 0" class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>Pet Owner Name</th>
+        <th>Pet Name</th>
+        <th>Appointment Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records">
+        <td>{{ record.user.username }}</td>
+        <td>{{ record.pet.name }}</td>
+        <td>{{ record.appointmentDate | date }}</td>
+        <td>{{ record.reason }}</td>
+        <td>{{ record.status }}</td>
+        <td><button [routerLink]="['/user/petOwner/feedback/add']">Add Feedback</button> <button [routerLink]="['/user/petOwner/feedback/view']">View Feedback</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ 

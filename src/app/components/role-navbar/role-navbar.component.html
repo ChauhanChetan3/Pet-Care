@@ -1,0 +1,90 @@
+<nav *ngIf="checkLogIn && checkRole=='USER' ">
+    <ul>  
+        <li>
+           
+            <select class="pet" name="pets" id="pets" [(ngModel)]="selectOptPet" (change)="onSelectChangePet()">
+                <option value="">Pets</option>
+                <option value="add-pet">Add Pets</option>
+                <option value="view-pet">View Pets</option>
+            </select>
+        
+
+        </li>
+
+        <li>
+           
+            <select name="appointment" class="appointment" id="appointment" [(ngModel)]="selectOptAppointment" (change)="onSelectChangeAppointment()">
+                <option value="">Appointment</option>
+                <option value="add">Add Appointment</option>
+                <option value="view">View Appointment</option>
+            </select>
+        
+        </li>
+        
+            
+        <li><a routerLink="/user/petOwner/view-treatment-record">View Treatment Record</a></li>
+        <li>
+      
+                <select class="feedback" name="feedback" id="feedback" [(ngModel)]="selectOptFeedback" (change)="onSelectChangeFeedback()">
+                    <option value="">My Feedback</option>
+                    <option value="add">Add Feedback</option>
+                    <option value="view">View Feedback</option>
+                </select>
+           
+        
+        </li>
+    </ul>
+</nav>
+
+
+
+<nav *ngIf="checkLogIn && checkRole=='ADMIN'  "   >
+
+    <ul>
+        <li><a routerLink="/admin/hospital/manage-appointment">Manage Appointments</a></li>
+        <li><a routerLink="/admin/hospital/feedback/view">View Feedback</a></li>
+        <li><a routerLink="/admin/hospital/view-treatment-records">View Treatment Records</a></li>
+    </ul>
+</nav> 
+
+
+  
+<!-- 
+
+  <nav *ngIf="checkLogIn && checkRole == 'USER'">
+    <ul>
+      <li>
+        <select class="pet" name="pets" id="pets" [(ngModel)]="selectOptPet" (change)="onSelectChangePet()">
+          <option value="">Pets</option>
+          <option value="add-pet">Add Pets</option>
+          <option value="view-pet">View Pets</option>
+        </select>
+      </li>
+  
+      <li>
+        <select name="appointment" class="appointment" id="appointment" [(ngModel)]="selectOptAppointment" (change)="onSelectChangeAppointment()">
+          <option value="">Appointment</option>
+          <option value="add">Add Appointment</option>
+          <option value="view">View Appointment</option>
+        </select>
+      </li>
+  
+      <li><a routerLink="/user/petOwner/view-treatment-record">View Treatment Record</a></li>
+      <li>
+        <select class="feedback" name="feedback" id="feedback" [(ngModel)]="selectOptFeedback" (change)="onSelectChangeFeedback()">
+          <option value="">My Feedback</option>
+          <option value="add">Add Feedback</option>
+          <option value="view">View Feedback</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+  
+  <nav *ngIf="checkLogIn && checkRole == 'ADMIN'">
+    <ul>
+      <li><a routerLink="/admin/hospital/manage-appointment">Manage Appointments</a></li>
+      <li><a routerLink="/admin/hospital/feedback/view">View Feedback</a></li>
+      <li><a routerLink="/admin/hospital/view-treatment-records">View Treatment Records</a></li>
+    </ul>
+  </nav>
+   -->

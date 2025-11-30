@@ -1,0 +1,41 @@
+ <app-navbar></app-navbar>
+
+    <div class="container">
+        <h2 class="text-center my-4 display-4">Book Appointment</h2>
+        <form [formGroup]="appointmentForm" (ngSubmit)="addAppointment()">
+            <div class="form-group">
+                <label for="pet">Select Pet</label>
+                <select id="pet" class="form-control" formControlName="pet" (change)="getPetId($event)" name="pet">
+                    <option *ngFor="let pet of pets; let i = index" [value]="pet.name">
+                        {{pet.name}}
+                    </option>
+                </select>
+                <div class="error-message" *ngIf="appointmentForm.get('pet').touched && appointmentForm.get('pet').invalid">
+                    <span *ngIf="appointmentForm.get('pet').errors?.required">Pet is required</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="appointmentDate">Appointment Date</label>
+                <input type="date" class="form-control" formControlName="appointmentDate" name="appointmentDate">
+                <div class="error-message" *ngIf="appointmentForm.get('appointmentDate').touched && appointmentForm.get('appointmentDate').invalid">
+                    <span *ngIf="appointmentForm.get('appointmentDate').errors?.required">Appointment Date is required</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <input type="text" class="form-control" formControlName="reason" name="reason">
+                <div class="error-message" *ngIf="appointmentForm.get('reason').touched && appointmentForm.get('reason').invalid">
+                    <span *ngIf="appointmentForm.get('reason').errors?.required">Reason is required</span>
+                </div>
+            </div>
+
+            <button [disabled]="appointmentForm.invalid" class="btn btn-primary" type="submit">Book Appointment</button>
+        </form>
+    </div> 
+
+
+
+
+    

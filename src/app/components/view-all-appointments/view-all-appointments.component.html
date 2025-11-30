@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <h2>All Appointments</h2>
+    <table class="table table-bordered table-striped" >
+        <thead class="thead-light">
+            <tr>
+                <th>Pet Name</th>
+                <th>Pet Owner name</th>
+                <th>Appointment Date</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of appointments">
+                    <td>{{a.pet.name}}</td>
+                    <td>{{a.user.username}}</td>
+                    <td>{{a.appointmentDate}}</td>
+                    <td>{{a.reason}}</td>
+                    <td>{{a.status}}</td>
+                    <td>
+                        <button (click)="approveAppointment(a.appointmentId)">Approve</button>
+                        <button (click)="rejectAppointment(a.appointmentId)">Reject</button>
+                        <button (click)="closeAppointment(a.appointmentId)">Close Appointment</button>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

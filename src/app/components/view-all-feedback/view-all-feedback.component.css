@@ -1,0 +1,16 @@
+ .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 1em;
+  }
+  
+  .table {
+    width: 100%;
+  }
+  
+  .my-4 {
+    text-align: center;
+    margin: 1.5rem 0;
+  } 
+
+  

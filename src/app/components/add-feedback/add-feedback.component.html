@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <h2 class="mb-4">Add Feedback</h2>
+  <form [formGroup]="feedbackForm" (ngSubmit)="addFeedback()">
+    <div class="form-group">
+      <label for="appointment">Select appointment</label>
+      <select id="appointment" class="form-control" formControlName="appointment" (change)="getappointmentId($event)" name="appointment">
+          <option *ngFor="let appointment of appointments; let i = index" [value]="appointment.appointmentDate">
+              {{appointment.appointmentDate}}
+          </option>
+      </select>
+      <div class="error-message" *ngIf="feedbackForm.get('appointment').touched && feedbackForm.get('appointment').invalid">
+          <span *ngIf="feedbackForm.get('appointment').errors?.required">Appointment is required</span>
+      </div>
+  </div>
+
+    <div class="form-group">
+      <label for="message">Feedback Message:</label>
+      <textarea class="form-control" name="message" id="message" formControlName="message" rows="4"></textarea>
+      <div class="invalid-feedback" *ngIf="feedbackForm.get('message').invalid && feedbackForm.get('message').touched">
+        <span *ngIf="feedbackForm.get('message').errors?.required">
+          Message is required.
+        </span>
+        <span *ngIf="feedbackForm.get('message').errors?.minlength">
+          Message must be at least 10 characters long.
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating (1-5):</label>
+      <input type="number" class="form-control" formControlName="rating" name="rating" id="rating" min="1" max="5">
+      <div class="invalid-feedback" *ngIf="feedbackForm.get('rating').invalid && feedbackForm.get('rating').touched">
+        <span *ngIf="feedbackForm.get('rating').errors?.min">
+          Rating should be between 1-5.
+        </span>
+        <span *ngIf="feedbackForm.get('rating').errors?.max">
+          Rating should be between 1-5.
+        </span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="feedbackForm.invalid">Submit Feedback</button>
+  </form>
+</div>
+
+
+

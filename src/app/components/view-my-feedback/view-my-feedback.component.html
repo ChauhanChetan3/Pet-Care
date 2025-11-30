@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <h2 class="my-4">My Feedback Records</h2>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th>Pet Owner Name</th>
+          <th>Pet Name</th>
+          <th>Message</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let feedback of feedbacks">
+          <td>{{ feedback.user.username }}</td>
+          <td>{{ feedback.appointment.pet.name }}</td>
+          <td>{{ feedback.message }}</td>
+          <td>{{ feedback.rating }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+  
+

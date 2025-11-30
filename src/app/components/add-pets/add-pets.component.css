@@ -1,0 +1,27 @@
+.container {
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.text-center{
+    font-weight: 600;
+}
+
+label {
+    font-weight: bold;
+}
+
+.error-message {
+    font-size: 0.9em;
+    color: red;
+    margin-top: 5px;
+}
+
+.btn-success {
+    width: 100%;
+}

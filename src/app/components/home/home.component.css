@@ -1,0 +1,286 @@
+.hero {
+    background: url('../../../assets/images/petImage2.png') no-repeat center center;
+    background-size: cover;
+    color: brown;
+    padding: 200px 0;
+    font-weight:bolder; /* This makes the text bold */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; /* This aligns the text to the top */
+    height: 150vh; /* Adjust the height if necessary */
+}
+
+
+
+    .services, .testimonials, .about-us {
+        padding: 50px 0;
+    }
+
+    .services .card, .testimonials .card {
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        background-color: #f8f9fa;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .carousel-item {
+        text-align: center;
+    }
+
+    .about-us {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+   }
+
+.about-us h2 {
+    color: #890057; /* Matching the button color */
+    font-weight: bold;
+}
+
+.about-us .lead {
+    color: brown; /* Matching the hero section text color */
+}
+
+.about-us .about-img {
+    height: auto;
+    max-width: 100%;
+    width: 100%; /* Ensures the image takes full width of the column */
+    border-radius: 20px; /* Rounded corners for images */
+}
+
+.about-us p {
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+    .about-us .btn-primary {
+        background-color: #890057; /* Same color as the hero button */
+        border-color: #890057; /* Same color as the hero button */
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+         border-radius: 25px; /* Rounded corners */
+}  
+
+.about-us .btn-primary:hover {
+    background-color: #5c003d; /* Darker shade for hover effect */
+    border-color: #5c003d; /* Darker shade for hover effect */
+    color: white;
+}
+
+
+
+    .button {
+        position: absolute; /* Position button absolutely */
+        bottom: 5px; /* Position 20px from the bottom */
+        left: 20px; /* Position 20px from the left */
+        background-color: #890057; /* Dark teal color that contrasts well with pink */
+        color: white; /* Text color to ensure readability */
+        padding: 10px 20px; /* Padding for the button */
+        border: none; /* Remove default border */
+        border-radius: 25px; /* Rounded corners */
+        text-align: center; /* Center the text inside the button */
+        font-weight: bold; /* Make the text bold */
+        text-decoration: none; /* Remove underline from the link */
+        display: block; /* Make the button a block element */
+        width: max-content; /* Ensure button width fits the content */
+    }
+
+    .button:hover {
+        background-color: #890057; /* Darker shade of teal for hover effect */
+        color: white; /* Ensure text color remains white on hover */
+    }
+    .services .btn-primary,
+    .services .btn-client-testimonials {
+     background-color: #890057; /* Desired button color */
+     border-color: #890057; /* Desired button color */
+     color: white;
+     font-weight: bold;
+     padding: 10px 20px;
+     border-radius: 25px; /* Rounded corners */
+    }
+
+   .services .btn-primary:hover,
+   .services .btn-client-testimonials:hover {
+    background-color: #5c003d; /* Darker shade for hover effect */
+    border-color: #5c003d; /* Darker shade for hover effect */
+    color: white;
+    }
+
+
+
+    html, body {
+        scroll-behavior: smooth;
+    }
+    .ftco-section {
+padding: 4em 0;
+position: relative;
+}
+
+.heading-section h2 {
+font-size: 24px; /* Smaller font size for the heading */
+color: #890057;
+}
+
+.services-2 h4 {
+font-size: 18px; /* Smaller font size for the subheadings */
+color: #890057;
+margin-bottom: 10px;
+}
+
+.services-2 p {
+font-size: 14px; /* Smaller font size for the paragraph text */
+margin-bottom: 0;
+color: #333;
+}
+
+.services-2 {
+list-style: none; /* Remove list dots */
+padding: 0;
+}
+
+.img-video {
+background-size: cover;
+background-position: center;
+width: 100%;
+height: 100%;
+min-height: 300px; /* Ensure the image is larger */
+}
+
+.video-play-button {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: flex;
+justify-content: center;
+align-items: center;
+width: 60px;
+height: 60px;
+background-color: rgba(0, 0, 0, 0.6);
+border-radius: 50%;
+color: #fff;
+font-size: 24px;
+text-decoration: none;
+}
+
+.icon-play {
+font-size: 2rem;
+}
+
+.modal-body {
+padding: 0;
+}
+
+.modal-header {
+border-bottom:#890057
+}
+
+.ftco-no-pt {
+padding-top: 0;
+}
+
+.ftco-no-pb {
+padding-bottom: 0;
+}
+
+.container {
+max-width: 1140px;
+margin: 0 auto;
+
+}
+
+.row {
+display: flex;
+flex-wrap: wrap;
+}
+
+.d-flex {
+display: flex;
+}
+
+.no-gutters {
+margin-right: 0;
+margin-left: 0;
+}
+
+.justify-content-center {
+justify-content: center;
+}
+
+.align-items-center {
+align-items: center;
+}
+
+.align-self-stretch {
+align-self: stretch;
+}
+
+.mb-4 {
+margin-bottom: 1.5rem;
+}
+
+.mb-sm-0 {
+margin-bottom: 0;
+}
+
+.pl-md-5 {
+padding-left: 3rem;
+}
+
+.py-md-5 {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+
+
+    /* Additional styles */
+    .service-img, .about-img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .footer {
+        background: #343a40;
+        color: white;
+    }
+
+    .footer a {
+        color: white;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    .contact-us {
+        background-color: #f8f9fa;
+    }
+
+    .contact-us h2 {
+        color: #890057;
+        font-weight: bold;
+    }
+
+    .contact-us .form-control {
+        border-radius: 25px;
+    }
+
+    .contact-us .btn-primary {
+        background-color: #890057;
+        border-color: #890057;
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 25px;
+    }
+
+    .contact-us .btn-primary:hover {
+        background-color: #5c003d;
+        border-color: #5c003d;
+        color: white;
+    }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url('https://example.com/pet-themed-background.jpg') no-repeat center center fixed; /* Pet-themed background URL */
+            background-size: cover;
+            background-color: #f4f4f9;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #00897b;
+        }
+        label {
+            font-weight: bold;
+            color: #495057;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .error-message {
+            font-size: 0.9em;
+            color: red;
+            margin-top: 5px;
+        }
+        .btn-success {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            background-color: #00897b; /* Matching the text color */
+            color: white;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #004d40; /* Darker shade for hover effect */
+            color: white;
+            border: none;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #6c757d;
+        }
+    </style>
+    <title>Edit Pet</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center my-4 display-4">Edit Pet</h2>
+        <form [formGroup]="petForm" (ngSubmit)="editPet()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" formControlName="name" id="name" name="name">
+                <div class="error-message" *ngIf="name.touched && name.invalid">
+                    <span *ngIf="name?.errors.required">Name is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="species">Species</label>
+                <input type="text" class="form-control" formControlName="species" id="species" name="species">
+                <div class="error-message" *ngIf="species.touched && species.invalid">
+                    <span *ngIf="species?.errors.required">Species is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="breed">Breed</label>
+                <input type="text" class="form-control" formControlName="breed" id="breed" name="breed">
+                <div class="error-message" *ngIf="breed.touched && breed.invalid">
+                    <span *ngIf="breed?.errors.required">Breed is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" class="form-control" formControlName="dateOfBirth" id="dateOfBirth" name="dateOfBirth">
+                <div class="error-message" *ngIf="dateOfBirth.touched && dateOfBirth.invalid">
+                    <span *ngIf="dateOfBirth?.errors.required">Date of Birth is required</span>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>

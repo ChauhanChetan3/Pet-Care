@@ -1,0 +1,106 @@
+<app-navbar></app-navbar>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background: url('https://example.com/pet-themed-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #f4f4f9;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #00897b;
+        }
+        label {
+            font-weight: bold;
+            color: #495057;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .error-message {
+            font-size: 0.9em;
+            color: red;
+            margin-top: 5px;
+        }
+        .btn-success {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            background-color: #00897b; /* Matching the text color */
+            color: white;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #004d40; /* Darker shade for hover effect */
+            color: white;
+            border: none;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #6c757d;
+        }
+    </style>
+    <title>Add New Pet</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center my-4 display-4">Add New Pet</h2>
+        <form [formGroup]="petForm" (ngSubmit)="addNewPet()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" formControlName="name" id="name" name="name" placeholder="Enter pet's name">
+                <div class="error-message" *ngIf="name.touched && name.invalid">
+                    <span *ngIf="name?.errors.required">Name is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="species">Species</label>
+                <input type="text" class="form-control" formControlName="species" id="species" name="species" placeholder="Enter pet's species">
+                <div class="error-message" *ngIf="species.touched && species.invalid">
+                    <span *ngIf="species?.errors.required">Species is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="breed">Breed</label>
+                <input type="text" class="form-control" formControlName="breed" id="breed" name="breed" placeholder="Enter pet's breed">
+                <div class="error-message" *ngIf="breed.touched && breed.invalid">
+                    <span *ngIf="breed?.errors.required">Breed is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" class="form-control" formControlName="dateOfBirth" id="dateOfBirth" name="dateOfBirth">
+                <div class="error-message" *ngIf="dateOfBirth.touched && dateOfBirth.invalid">
+                    <span *ngIf="dateOfBirth?.errors.required">Date of birth is required</span>
+                </div>
+            </div>
+            <button [disabled]="petForm.invalid" class="btn btn-success" type="submit">Add Pet</button>
+        </form>
+        <footer>
+            <p>&copy; 2025 Pet Care. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

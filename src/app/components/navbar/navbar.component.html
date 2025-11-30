@@ -1,0 +1,121 @@
+<!-- <nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand site-title" href="#">Pet Care</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <ng-container *ngIf="!isLoggedIn">
+                    <li class="nav-item"><a class="nav-link" routerLink="/register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/login">Login</a></li>
+                </ng-container>
+                <ng-container *ngIf="isLoggedIn">
+                    <li class="nav-item">
+                        <span class="navbar-text user-info">
+                            {{userName}} / {{displayRole}}
+                        </span>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" routerLink="/dashboard">Dashboard</a></li>
+                            <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+                            <li><a class="dropdown-item" routerLink="/services">Services</a></li>
+                            <li><a class="dropdown-item" routerLink="/contact">Contact</a></li>
+                        </ul>
+                    </li>
+                    <ng-container *ngIf="userRole === 'ADMIN'">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                <li><a class="dropdown-item" routerLink="/admin/dashboard">Dashboard</a></li>
+                                <li><a class="dropdown-item" routerLink="/admin/users">Users</a></li>
+                                <li><a class="dropdown-item" routerLink="/admin/reports">Reports</a></li>
+                            </ul>
+                        </li>
+                    </ng-container>
+                    <ng-container *ngIf="userRole === 'USER'">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                User
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" routerLink="/user/dashboard">Dashboard</a></li>
+                                <li><a class="dropdown-item" routerLink="/user/pets">My Pets</a></li>
+                                <li><a class="dropdown-item" routerLink="/user/settings">Settings</a></li>
+                            </ul>
+                        </li>
+                    </ng-container>
+                    <li class="nav-item">
+                        <button (click)="showLogoutPopup = true" class="btn btn-outline-light logout-btn">Logout</button>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="showLogoutPopup" class="logout-popup">
+        <div class="popup-content">
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="popup-actions">
+                <button class="btn btn-primary confirm-btn" (click)="isLogout()">Yes, Logout</button>
+                <button (click)="showLogoutPopup = false" class="btn btn-secondary cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+</nav> -->
+
+    <nav class="navbar">
+    <div class="navbar-container">
+        <div class="head">
+            <h1 class="site-title" >Pet Care</h1>
+        </div>
+        <div class="routing">
+        <ul class="nav-links">
+            <ng-container *ngIf="!isLoggedIn">
+           <!-- <ng-container *ngIf="userRole == ''">     -->
+                <li><a routerLink="/register">Register</a></li>
+                <li><a routerLink="/login">Login</a></li>
+            </ng-container>
+
+            <ng-container *ngIf="userRole == 'ADMIN' || userRole=='USER'">
+            <!-- <ng-container *ngIf="isLoggedIn"> -->
+                <li>
+                    <span class="user-info">
+                         {{userName}} / {{displayRole}}
+                    </span>
+                </li>
+                <li ><a routerLink="/">Home</a></li>
+                <ng-container *ngIf="userRole === 'ADMIN'">
+                    <app-role-navbar></app-role-navbar>
+                </ng-container>
+                <ng-container *ngIf="userRole === 'USER'">
+                    <app-role-navbar></app-role-navbar>
+                </ng-container>
+                
+                <li>
+                    <button (click)="showLogoutPopup = true" class="logout-btn">
+                    Logout
+                    </button>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+    </div>
+
+    <div *ngIf="showLogoutPopup" class="logout-popup">
+        <div class="popup-contenr">
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout.</p>
+            <div class="popup-actions">
+                <button class="confirm-btn" (click)="isLogout()" >Yes, Logout</button>
+                <button (click)="showLogoutPopup = false" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+</nav>

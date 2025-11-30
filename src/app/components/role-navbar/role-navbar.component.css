@@ -1,0 +1,57 @@
+/* nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+nav ul li a:hover{
+    text-decoration: underline;
+}
+/*  */
+/* select{
+    width: 15px;
+}  */
+
+
+/* .txt{
+    width: 85px;
+    color: white;
+    background-color:#4f0233 ;
+} */
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+ 
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+ 
+.pet{
+    width: 90px;
+    color: white;  
+    background-color: #4a0330;
+}
+
+ 
+.appointment{
+    width:  154px;
+    color: white;  
+    background-color: #4a0330;
+}
+
+.feedback{
+    width:  128px;
+    color: white;  
+    background-color:  #4a0330;
+}
